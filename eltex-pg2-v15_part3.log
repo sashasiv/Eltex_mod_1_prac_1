@@ -1,0 +1,84 @@
+ Раздел 3 
+/$ mkdir -p ~/D1/D2/D3
+Были созданы три вложенных каталога
+
+$ touch ~/D1/D2/file.txt
+Создан file.txt в каталоге D2
+
+/$ echo Произвольный текст >> ~/D1/D2/file.txt
+Был создан текст в file.txt
+
+/$ ln ~/D1/D2/file.txt ~/D1/D2/D3/file_hln.txt
+/$ ln -s ~/D1/D2/file.txt ~/D1/D2/D3/file_sln.txt
+Было создано две ссылки
+
+/$ ls -li ~/D1/D2/file.txt ~/D1/D2/D3/file_*
+1048684 -rw-r--r-- 2 eltex-pg2-v15 eltex-pg2-v15 36 Oct 10 16:56 /home/eltex-pg2-v15/D1/D2/D3/file_hln.txt
+1048685 lrwxrwxrwx 1 eltex-pg2-v15 eltex-pg2-v15 34 Oct 10 16:56 /home/eltex-pg2-v15/D1/D2/D3/file_sln.txt -> /home/eltex-pg2-v15/D1/D2/file.txt
+1048684 -rw-r--r-- 2 eltex-pg2-v15 eltex-pg2-v15 36 Oct 10 16:56 /home/eltex-pg2-v15/D1/D2/file.txt
+
+/$ mv ~/D1/D2/file.txt ~/D1/
+Файл был перемещен в каталог D1
+
+/$ cat ~/D1/D2/D3/file_sln.txt
+
+/$ cat ~/D1/D2/D3/file_hln.txt
+Произвольный текст
+
+/$ ls -li ~/D1/file.txt ~/D1/D2/D3/file_*
+1048684 -rw-r--r-- 2 eltex-pg2-v15 eltex-pg2-v15 36 Oct 10 16:56 /home/eltex-pg2-v15/D1/D2/D3/file_hln.txt
+1048685 lrwxrwxrwx 1 eltex-pg2-v15 eltex-pg2-v15 34 Oct 10 16:56 /home/eltex-pg2-v15/D1/D2/D3/file_sln.txt -> /home/eltex-pg2-v15/D1/D2/file.txt
+1048684 -rw-r--r-- 2 eltex-pg2-v15 eltex-pg2-v15 36 Oct 10 16:56 /home/eltex-pg2-v15/D1/file.txt
+Символьная ссылка сломалась, жесткая нет. Символьная содержит лишь адрес, жесткая является другим названием файла?
+
+/$ rm -r ~/D1/D2
+
+/$ ls -la ~/D1
+total 12
+drwxr-xr-x  2 eltex-pg2-v15 eltex-pg2-v15 4096 Oct 10 17:02 .
+drwx------ 17 eltex-pg2-v15 eltex-pg2-v15 4096 Oct 10 17:03 ..
+-rw-r--r--  1 eltex-pg2-v15 eltex-pg2-v15   36 Oct 10 16:56 file.txt
+
+/$ find / -type f -size +20M 2>/dev/null
+
+/$ head -20 eltex-pg2-v15_part3_get20M.log | while read f; do du -h ; done
+31M	/usr/bin/x86_64-linux-gnu-lto-dump-12
+31M	/usr/lib/gcc/x86_64-linux-gnu/12/lto1
+32M	/usr/lib/gcc/x86_64-linux-gnu/12/cc1
+30M	/usr/lib/x86_64-linux-gnu/libicudata.so.72.1
+0	/proc/kcore
+33M	/boot/initrd.img-6.1.0-44-amd64
+33M	/boot/initrd.img-6.1.0-50-amd64
+33M	/boot/initrd.img-6.1.0-53-amd64
+41M	/var/log/journal/8247b53b6ae84ae0ad9bb1c96113fd29/system@4f44ef78d53d4cd0a5555898b8d0015b-0000000000179b0c-000659e0105337c7.journal
+25M	/var/log/journal/8247b53b6ae84ae0ad9bb1c96113fd29/system@00065be42e22b64e-29e46ef12bfd5644.journal~
+42M	/var/log/journal/8247b53b6ae84ae0ad9bb1c96113fd29/system@4f44ef78d53d4cd0a5555898b8d0015b-000000000016aef5-0006585775bcfe03.journal
+33M	/var/log/journal/8247b53b6ae84ae0ad9bb1c96113fd29/system@00065b6e0461a953-e594878e03ffcfa9.journal~
+25M	/var/log/journal/8247b53b6ae84ae0ad9bb1c96113fd29/system@00065c4bf168df91-94a074e01b8fde49.journal~
+25M	/var/log/journal/8247b53b6ae84ae0ad9bb1c96113fd29/system.journal
+39M	/var/cache/apt/srcpkgcache.bin
+39M	/var/cache/apt/pkgcache.bin
+48M	/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_binary-amd64_Packages
+49M	/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_source_Sources
+32M	/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_i18n_Translation-en
+
+/$ find /home/eltex-pg2-v15 -type f -mtime -1
+/home/eltex-pg2-v15/.viminfo
+/home/eltex-pg2-v15/.lesshst
+/home/eltex-pg2-v15/eltex-pg2-v15_part.log
+/home/eltex-pg2-v15/D1/file.txt
+/home/eltex-pg2-v15/eltex-pg2-v15_part3.log
+/home/eltex-pg2-v15/.bash_history
+/home/eltex-pg2-v15/eltex-pg2-v15_part3_get20M.log
+/home/eltex-pg2-v15/.Xauthority
+
+/$ which find
+/usr/bin/find
+
+/$ file /usr/bin/find
+/usr/bin/find: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=5545a6c7162d325fbe5ffabcbfe4e5521b66ce70, for GNU/Linux 3.2.0, stripped
+
+/$ file /boot/initrd.img*
+/boot/initrd.img-6.1.0-44-amd64: ASCII cpio archive (SVR4 with no CRC)
+/boot/initrd.img-6.1.0-50-amd64: ASCII cpio archive (SVR4 with no CRC)
+/boot/initrd.img-6.1.0-53-amd64: ASCII cpio archive (SVR4 with no CRC)

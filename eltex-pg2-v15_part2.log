@@ -1,0 +1,406 @@
+Script started on 2026-10-09 18:56:12+07:00 [TERM="dumb" TTY="/dev/pts/17" COLUMNS="157" LINES="42"]
+
+eltex-pg2-v15@eltex-2026-autumn:~$ screen -ls
+There are screens on:
+	3647192.eltex-pg2-v15_part2	(10/09/2026 06:55:56 PM)	(Attached)
+	3406637.pts-61.eltex-2026-autumn	(10/09/2026 03:41:33 PM)	(Detached)
+	154145..eltex-2026-autumn	(10/07/2026 08:28:48 PM)	(Detached)
+	129340.pts-14.eltex-2026-autumn	(10/07/2026 08:10:52 PM)	(Detached)
+	115970.pts-95.eltex-2026-autumn	(10/07/2026 07:57:32 PM)	(Detached)
+5 Sockets in /run/screen/S-eltex-pg2-v15.eltex-pg2-v15@eltex-2026-autumn:~$ ls
+ls           lsblk        lscpu        lsinitramfs  lsirq        lslogins     lsmod        lsof         lsusb        
+lsattr       lsb_release  lsfd         lsipc        lslocks      lsmem        lsns         lspci        
+eltex-pg2-v15@eltex-2026-autumn:~$ $HIST
+$HISTCMD       $HISTCONTROL   $HISTFILE      $HISTFILESIZE  $HISTSIZE      
+                                                                                                                                                            eltex-pg2-v15@eltex-2026-autumn:~$ echo $HISTSIZE
+1000
+
+eltex-pg2-v15@eltex-2026-autumn:~$ echo $HISTFILESIZESIZE
+2000
+
+eltex-pg2-v15@eltex-2026-autumn:~$ ls -d ` ~/.*
+/home/eltex-pg2-v15/.bash_history  /home/eltex-pg2-v15/.bashrc	/home/eltex-pg2-v15/.lesshst  /home/eltex-pg2-v15/.ssh	    /home/eltex-pg2-v15/.Xauthority
+/home/eltex-pg2-v15/.bash_logout   /home/eltex-pg2-v15/.config	/home/eltex-pg2-v15/.profile  /home/eltex-pg2-v15/.viminfo
+eltex-pg2-v15@eltex-2026-autumn:~$ export HISTTIMEFORMAT="%F %T "
+eltex-pg2-v15@eltex-2026-autumn:~$ history
+    1  2026-10-09 18:56:12 man -Lru man
+    2  2026-10-09 18:56:12 export LANG=ru_RU.UTF8
+    3  2026-10-09 18:56:12 screen -Is
+    4  2026-10-09 18:56:12 export LANG=ru_RU.UTF8
+    5  2026-10-09 18:56:12 screen
+    6  2026-10-09 18:56:12 man screen
+    7  2026-10-09 18:56:12 man -Lru man
+    8  2026-10-09 18:56:12 man -Lru screen
+    9  2026-10-09 18:56:12 screen -dms top top
+   10  2026-10-09 18:56:12 screen -dmS top top
+   11  2026-10-09 18:56:12 screen -ls
+   12  2026-10-09 18:56:12 man screen
+   13  2026-10-09 18:56:12 screen -r top
+   14  2026-10-09 18:56:12 man screen
+   15  2026-10-09 18:56:12 q
+   16  2026-10-09 18:56:12 screen
+   17  2026-10-09 18:56:12 man -Lru man
+   18  2026-10-09 18:56:12 q
+   19  2026-10-09 18:56:12 screen
+   20  2026-10-09 18:56:12 screen -r top
+   21  2026-10-09 18:56:12 man screen
+   22  2026-10-09 18:56:12 screen
+   23  2026-10-09 18:56:12 man screen
+   24  2026-10-09 18:56:12 man -Lru screen
+   25  2026-10-09 18:56:12 LANG=ru_RU.UTF8 man screen
+   26  2026-10-09 18:56:12 export LANG=ru_RU.UTF8 man screen
+   27  2026-10-09 18:56:12 LANG=ru_RU.UTF8 man screen
+   28  2026-10-09 18:56:12 screen
+   29  2026-10-09 18:56:12 man screen
+   30  2026-10-09 18:56:12 screen -S top -d -m top
+   31  2026-10-09 18:56:12 screen -ls
+   32  2026-10-09 18:56:12 man screen
+   33  2026-10-09 18:56:12 screen -r top
+   34  2026-10-09 18:56:12 screen -r 15455
+   35  2026-10-09 18:56:12 screen -r top
+   36  2026-10-09 18:56:12 exit
+   37  2026-10-09 18:56:12 screen -ls
+   38  2026-10-09 18:56:12 screen -S top -d -m top
+   39  2026-10-09 18:56:12 screen -ls
+   40  2026-10-09 18:56:12 screen -r top
+   41  2026-10-09 18:56:12 screen -S top -d -m top
+   42  2026-10-09 18:56:12 screen -r top
+   43  2026-10-09 18:56:12 screen -S report
+   44  2026-10-09 18:56:12 screen -ls
+   45  2026-10-09 18:56:12 vi -report_part1.txt
+   46  2026-10-09 18:56:12 vi report_part1.txt
+   47  2026-10-09 18:56:12 man screen
+   48  2026-10-09 18:56:12 watch usr/bin/vmstat
+   49  2026-10-09 18:56:12 watch /usr/bin/vmstat
+   50  2026-10-09 18:56:12 vi report_part1.txt
+   51  2026-10-09 18:56:12 screen -ls
+   52  2026-10-09 18:56:12 -r whoami_part2
+   53  2026-10-09 18:56:12 screen -r whoami_part2
+   54  2026-10-09 18:56:12 screen -r 3490937
+   55  2026-10-09 18:56:12 screen -r 3490937.whoami_part2
+   56  2026-10-09 18:56:12 screen -d -r 3490937
+   57  2026-10-09 18:56:12 screen -ls
+   58  2026-10-09 18:56:12 screen -S 'whoami'_part2
+   59  2026-10-09 18:56:12 screen -S $(whoami)_part2
+   60  2026-10-09 18:56:12 man screen
+   61  2026-10-09 18:56:12 man script
+   62  2026-10-09 18:56:12 man -Lru script
+   63  2026-10-09 18:56:12 script -c -f $USER_part.log
+   64  2026-10-09 18:56:12 pwd
+   65  2026-10-09 18:56:12 echo $USER_part.log
+   66  2026-10-09 18:56:12 exit
+   67  2026-10-09 18:56:12 -rm -f .log
+   68  2026-10-09 18:56:12  -c
+   69  2026-10-09 18:56:12 script -f "${USER}_part.log" -c col
+   70  2026-10-09 18:56:12 rm .log
+   71  2026-10-09 18:56:12 rm eltex-pg2-v15_part.log
+   72  2026-10-09 18:56:12 script -f "${USER}_part.log" -c col
+   73  2026-10-09 18:56:12 screen -S $(whoami)_part2
+   74  2026-10-09 18:56:12 screen -ls
+   75  2026-10-09 18:56:12 screen -s $(whoami)_part2
+   76  2026-10-09 18:56:12 screen -ls
+   77  2026-10-09 18:56:12 exit
+   78  2026-10-09 18:56:12 export TERM=dumb
+   79  2026-10-09 18:56:12 eport LS_COLORS
+   80  2026-10-09 18:56:12 eport LS_COLORS=
+   81  2026-10-09 18:56:12 export LS_COLORS=
+   82  2026-10-09 18:56:12 export GREP_COLORS=
+   83  2026-10-09 18:56:12 rm eltex-pg2-v15_part.log
+   84  2026-10-09 18:56:12 script -f "${USER}_part.log"
+   85  2026-10-09 18:56:12 rm eltex-pg2-v15_part.log
+   86  2026-10-09 18:56:12 screen -s $(whoami)_part2
+   87  2026-10-09 18:56:12 screen ls
+   88  2026-10-09 18:56:12 screen -ls
+   89  2026-10-09 18:56:12 screen -S $(whoami)_part2
+   90  2026-10-09 18:56:12 screen -S "$(whoami)_part2"
+   91  2026-10-09 18:56:12 screen -S $('whoami')_part2
+   92  2026-10-09 18:56:12 screen -S 'whoami'_part2
+   93  2026-10-09 18:56:12 screen -ls
+   94  2026-10-09 18:56:12 exit
+   95  2026-10-09 18:56:12 rm eltex-pg2-v15_part.log
+   96  2026-10-09 18:56:12 script -f "${USER}_part.log"
+   97  2026-10-09 17:47:14 screen ls
+   98  2026-10-09 17:47:18 screen -ls
+   99  2026-10-09 17:50:31 $HISTSIZE
+  100  2026-10-09 17:50:37 echo $HISTSIZE
+  101  2026-10-09 17:50:45 echo $HISTFILESIZE
+  102  2026-10-09 17:52:25 ls -d~/.
+  103  2026-10-09 17:52:36 ls -d ~/.
+  104  2026-10-09 17:53:53 ls -la ~ | grep ' \.'
+  105  2026-10-09 17:54:27 ls -d ~/.
+  106  2026-10-09 17:54:52 ls -d ~/.*
+  107  2026-10-09 17:57:18 export $HISTTIMEFORMAT="%F %T " 
+  108  2026-10-09 17:57:52 export HISTTIMEFORMAT="%F %T " 
+  109  2026-10-09 17:57:59 history
+  110  2026-10-09 17:59:04 date
+  111  2026-10-09 18:00:21 history | tail 5
+  112  2026-10-09 18:00:27 history | tail -5
+  113  2026-10-09 18:01:26 tail -5 ~/.bash_history
+  114  2026-10-09 18:03:15 export PROMPT_COMMAND='history -a'
+  115  2026-10-09 18:04:01 date
+  116  2026-10-09 18:04:06 tail -5 ~/.bash_history
+  117  2026-10-09 18:05:45 history | tail -5
+  118  2026-10-09 18:07:25 DATE =$(date+%F)
+  119  2026-10-09 18:07:33 DATE=$(date+%F)
+  120  2026-10-09 18:07:48 DATE=$(date)
+  121  2026-10-09 18:08:16 echo "$DATE"
+  122  2026-10-09 18:09:24 DATE=$(date %F)
+  123  2026-10-09 18:09:51 man date
+  124  2026-10-09 18:11:09 DATE=$(date [+%F])
+  125  2026-10-09 18:11:26 man date
+  126  2026-10-09 18:13:01 DATE=$(date -u +%F)
+  127  2026-10-09 18:13:13 echo "$DATE"
+  128  2026-10-09 18:14:04 DATE=$(date -u +%T)
+  129  2026-10-09 18:14:06 echo "$DATE"
+  130  2026-10-09 18:14:23 man date
+  131  2026-10-09 18:15:25 DATE=$(date -now +%T)
+  132  2026-10-09 18:17:32 man date
+  133  2026-10-09 18:19:10 DATE=$"(date +%T)"
+  134  2026-10-09 18:19:15 echo "$DATE"
+  135  2026-10-09 18:19:32 DATE="$(date +%T)"
+  136  2026-10-09 18:19:34 echo "$DATE"
+  137  2026-10-09 18:22:18 DATE_TIME="$DATE $TIME"
+  138  2026-10-09 18:22:29 echo "$DATE_TIME"
+  139  2026-10-09 18:24:16 ls /bin/sbin | grep '[0-9]'
+  140  2026-10-09 18:24:35 ls /bin /sbin | grep '[0-9]'
+  141  2026-10-09 18:35:37 for m in {01..12}; do mkdir `/$(date +%Y)-$m; done
+  142  2026-10-09 18:56:12 exit
+  143  2026-10-09 18:27:52 PROMPT_COMMAND='PS1="$(whoami)@$(hostname)-$(date,%H:%M)>"'
+  144  2026-10-09 18:28:04 PROMPT_COMMAND='PS1="$(whoami)@$(hostname)-$(date +%H:%M)>"'
+  145  2026-10-09 18:32:30 PS1='u@\H-\t>'
+  146  2026-10-09 18:32:43 export PS1
+  147  2026-10-09 18:32:47 bash
+  148  2026-10-09 18:56:12 mkdir -p `\$(date ,%Y)-{01..12}
+  149  2026-10-09 18:56:12 mkdir -p `/$(date ,%Y)-{01..12}
+  150  2026-10-09 18:56:12 mkdir -p `\$(date ,%Y)-{01..12}
+  151  2026-10-09 18:56:12 mkdir -p `/$(date +%Y)-{01..12}
+  152  2026-10-09 18:56:12 mkdir -p `\$(date ,%Y)-{01..12}
+  153  2026-10-09 18:56:12 mkdir -p ~/$(date +%Y)-{01..12}
+  154  2026-10-09 18:56:12 mkdir -p `\$(date ,%Y)-{01..12}
+  155  2026-10-09 18:56:12 mkdir -p ~/$(date +%Y)-{01..12}
+  156  2026-10-09 18:56:12 exit
+  157  2026-10-09 18:56:12 screen -r report
+  158  2026-10-09 18:56:12 screen -r top
+  159  2026-10-09 18:56:12 screen -S report
+  160  2026-10-09 18:56:12 screen -ls
+  161  2026-10-09 18:56:12 screen -S "${USER}_part2"
+  162  2026-10-09 18:56:12 exit
+  163  2026-10-09 18:56:12 screen -S "${USER}_part2"
+  164  2026-10-09 18:56:12 exit
+  165  2026-10-09 18:56:12 screen -S ${USER}_part2
+  166  2026-10-09 18:56:12 screen -S "%{user}_part2"
+  167  2026-10-09 18:56:12 script -f "$USER_part.log"
+  168  2026-10-09 18:56:12 rm .log
+  169  2026-10-09 18:56:12 script -f "${USER}_part.log"
+  170  2026-10-09 18:56:12 rm eltex_pg2_v15_part.log
+  171  2026-10-09 18:56:12 rm eltex-pg2-v15_part.log
+  172  2026-10-09 18:56:12 export LS_COLORS=
+  173  2026-10-09 18:56:12 export GREP_COLORS=
+  174  2026-10-09 18:56:12 script -f "${USER}_part.log"
+  175  2026-10-09 18:56:12 rm eltex-pg2-v15_part.log
+  176  2026-10-09 18:56:12 export TERM=dumb
+  177  2026-10-09 18:56:12 script -f "${USER}_part.log"
+  178  2026-10-09 18:56:12 screen -ls
+  179  2026-10-09 18:56:12 exit
+  180  2026-10-09 18:56:12 export TERM=dumb
+  181  2026-10-09 18:56:12 script -f "${USER}_part.log"
+  182  2026-10-09 18:56:12 screen -ls
+  183  2026-10-09 18:57:41 echo $HISTSIZE
+  184  2026-10-09 18:57:50 echo $HISTFILESIZE
+  185  2026-10-09 18:58:18 ls -d ~/.*
+  186  2026-10-09 18:59:04 export HISTTMEFORMAT="%F %T"
+  187  2026-10-09 18:59:18 history
+  188  2026-10-09 18:59:50 export HISTTIMEFORMAT="%F %T"
+  189  2026-10-09 18:59:53 history
+  190  2026-10-09 19:00:01 export HISTTIMEFORMAT="%F %T "
+  191  2026-10-09 19:00:03 history
+  
+eltex-pg2-v15@eltex-2026-autumn:~$ date
+Fri Oct  9 07:00:16 PM +07 2026
+
+eltex-pg2-v15@eltex-2026-autumn:~$ history | tail -5
+  189  2026-10-09 18:59:53 history
+  190  2026-10-09 19:00:01 export HISTTIMEFORMAT="%F %T "
+  191  2026-10-09 19:00:03 history
+  192  2026-10-09 19:00:16 date
+  193  2026-10-09 19:00:34 history | tail -5
+eltex-pg2-v15@eltex-2026-autumn:~$ tail -5 /.bash_history
+screen -ls
+exit
+export TERM=dumb
+script -f "${USER}_part.log"
+screen -ls
+
+eltex-pg2-v15@eltex-2026-autumn:~$ export PROMPT_COMMAND='history -a'
+
+eltex-pg2-v15@eltex-2026-autumn:~$ date
+Fri Oct  9 07:02:01 PM +07 2026
+
+eltex-pg2-v15@eltex-2026-autumn:~$ history | tail -5 
+  193  2026-10-09 19:00:34 history | tail -5
+  194  2026-10-09 19:01:06 tail -5 ~/.bash_history
+  195  2026-10-09 19:01:58 export PROMPT_COMMAND='history -a'
+  196  2026-10-09 19:02:01 date
+  197  2026-10-09 19:02:06 history | tail -5
+  
+eltex-pg2-v15@eltex-2026-autumn:~$ tail -5 ~/.bash_history
+export PROMPT_COMMAND='history -a'
+#1791547321
+date
+#1791547326
+history | tail -5
+
+eltex-pg2-v15@eltex-2026-autumn:~$ DATE="$(date +%F)"
+
+eltex-pg2-v15@eltex-2026-autumn:~$ echo "$DATE"
+2026-10-09
+
+eltex-pg2-v15@eltex-2026-autumn:~$ TIME="$(date +%T)"
+
+eltex-pg2-v15@eltex-2026-autumn:~$ echo "$DATE"
+19:03:40
+
+eltex-pg2-v15@eltex-2026-autumn:~$ DATE_TIME="$DATE $TIME"
+
+eltex-pg2-v15@eltex-2026-autumn:~$ echo DATE_TIME="$DATE $TIME"
+2026-10-09 19:03:40
+
+eltex-pg2-v15@eltex-2026-autumn:~$ ls /bin /sbin | grep '[0-9]'
+addr2line
+b2sum
+base32
+base64
+bunzip2
+bzip2
+bzip2recover
+c89
+c89-gcc
+c99
+c99-gcc
+cpan5.36-x86_64-linux-gnu
+cpp-12
+diff3
+enc2xs
+gcc-12
+gcc-ar-12
+gcc-nm-12
+gcc-ranlib-12
+gcov-12
+gcov-dump-12
+gcov-tool-12
+grub-menulst2cfg
+grub-mkpasswd-pbkdf2
+grub-syslinux2cfg
+h2ph
+h2xs
+i386
+linux32
+linux64
+lto-dump-12
+md5sum
+md5sum.textutils
+pdb3
+pdb3.11
+perl5.36.0
+perl5.36-x86_64-linux-gnu
+ping4
+ping6
+pl2pm
+pod2html
+pod2man
+pod2text
+pod2usage
+py3clean
+py3compile
+py3versions
+pydoc3
+pydoc3.11
+pygettext3
+pygettext3.11
+python3
+python3.11
+sha1sum
+sha224sum
+sha256sum
+sha384sum
+sha512sum
+ssh-argv0
+systemd-id128
+traceroute6
+traceroute6.db
+x86_64
+x86_64-linux-gnu-addr2line
+x86_64-linux-gnu-ar
+x86_64-linux-gnu-as
+x86_64-linux-gnu-c++filt
+x86_64-linux-gnu-cpp
+x86_64-linux-gnu-cpp-12
+x86_64-linux-gnu-dwp
+x86_64-linux-gnu-elfedit
+x86_64-linux-gnu-gcc
+x86_64-linux-gnu-gcc-12
+x86_64-linux-gnu-gcc-ar
+x86_64-linux-gnu-gcc-ar-12
+x86_64-linux-gnu-gcc-nm
+x86_64-linux-gnu-gcc-nm-12
+x86_64-linux-gnu-gcc-ranlib
+x86_64-linux-gnu-gcc-ranlib-12
+x86_64-linux-gnu-gcov
+x86_64-linux-gnu-gcov-12
+x86_64-linux-gnu-gcov-dump
+x86_64-linux-gnu-gcov-dump-12
+x86_64-linux-gnu-gcov-tool
+x86_64-linux-gnu-gcov-tool-12
+x86_64-linux-gnu-gold
+x86_64-linux-gnu-gp-archive
+x86_64-linux-gnu-gp-collect-app
+x86_64-linux-gnu-gp-display-html
+x86_64-linux-gnu-gp-display-src
+x86_64-linux-gnu-gp-display-text
+x86_64-linux-gnu-gprof
+x86_64-linux-gnu-gprofng
+x86_64-linux-gnu-ld
+x86_64-linux-gnu-ld.bfd
+x86_64-linux-gnu-ld.gold
+x86_64-linux-gnu-lto-dump
+x86_64-linux-gnu-lto-dump-12
+x86_64-linux-gnu-nm
+x86_64-linux-gnu-objcopy
+x86_64-linux-gnu-objdump
+x86_64-linux-gnu-ranlib
+x86_64-linux-gnu-readelf
+x86_64-linux-gnu-size
+x86_64-linux-gnu-strings
+x86_64-linux-gnu-strip
+dumpe2fs
+e2freefrag
+e2fsck
+e2image
+e2label
+e2mmpstatus
+e2scrub
+e2scrub_all
+e2undo
+e4crypt
+e4defrag
+fsck.ext2
+fsck.ext3
+fsck.ext4
+killall5
+mke2fs
+mkfs.ext2
+mkfs.ext3
+mkfs.ext4
+resize2fs
+tune2fs
+update-grub2                                                                                                                                                            eltex-pg2-v15@eltex-2026-autumn:~$ PROMPT_COMMAND='PS1="$(whoami)@$(hostname)-$(date +%H:%M)> "'
+
+eltex-pg2-v15@eltex-2026-autumn-19:08>PS1='\u@\H-\t>'
+
+eltex-pg2-v15@eltex-2026-autumn-19:08>export PS1
+
+                                                                                                                                                            eltex-pg2-v15@eltex-2026-autumn-19:09>bash
+
+eltex-pg2-v15@eltex-2026-autumn-19:09>mkdir -p ~/$(date +%Y)-{01..12}
+
+eltex-pg2-v15@eltex-2026-autumn-19:10>
