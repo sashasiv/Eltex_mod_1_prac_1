@@ -1,0 +1,288 @@
+$ git config --global --list
+user.name=sashasiv
+user.email=sashasiv@mail.ru
+init.defaultbranch=main
+
+$ ssh-keygen -t ed25519 -f ~/.ssh/github-key
+Generating public/private ed25519 key pair.
+Created directory '/c/Users/sashasiv/.ssh'.
+Enter passphrase for "/c/Users/sashasiv/.ssh/github-key" (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/sashasiv/.ssh/github-key
+Your public key has been saved in /c/Users/sashasiv/.ssh/github-key.pub
+The key fingerprint is:
+
+sashasiv@MyComputer MINGW64 ~
+$ gh auth login
+? Where do you use GitHub? GitHub.com
+? What is your preferred protocol for Git operations on this host? SSH
+? Upload your SSH public key to your GitHub account? C:\Users\sashasiv\.ssh\github-key.pub
+? Title for your SSH key: (GitHub CLI) MyCom0
+
+? Title for your SSH key: MyCom0
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! One-time code (9B07-A0C8) copied to clipboard
+Press Enter to open https://github.com/login/device in your browser...
+✓ Authentication complete.
+- gh config set -h github.com git_protocol ssh
+✓ Configured git protocol
+✓ Uploaded the SSH key to your GitHub account: C:\Users\sashasiv\.ssh\github-key.pub
+✓ Logged in as sashasiv
+
+sashasiv@MyComputer MINGW64 ~
+$ gh auth setup-git --hostname github.com
+
+sashasiv@MyComputer MINGW64 ~
+$ gh auth status
+github.com
+  ✓ Logged in to github.com account sashasiv (keyring)
+  - Active account: true
+  - Git operations protocol: ssh
+  - Token: gho_************************************
+  - Token scopes: 'admin:public_key', 'gist', 'read:org', 'repo'
+
+sashasiv@MyComputer MINGW64 ~
+$ gh repo create --public eltex_m1_p2_r3
+✓ Created repository sashasiv/eltex_m1_p2_r3 on github.com
+  https://github.com/sashasiv/eltex_m1_p2_r3
+
+sashasiv@MyComputer MINGW64 ~
+$ mkdir ~/eltex_m1_p2_r3 && cd ~/eltex_m1_p2_r3
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3
+$ echo "# Практика по git" >> README.md
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3
+$ git init
+Initialized empty Git repository in C:/Users/sashasiv/eltex_m1_p2_r3/.git/
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git branch -M main
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git remote add origin https://github.com/sashasiv/eltex_m1_p2_r3.git
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ mkdir -p module1_p1/task1
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ mkdir -p module1_p1/task2
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ mkdir -p module1_p1/task3
+
+
+//// Я взял 3 случайных лог файла с сервера так как на сервер никакие отчеты не выгружал
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ scp -P 44556 eltex-pg2-v15@217.71.138.1:~/eltex-pg2-v15_part1.log ./module1_p1/task1
+eltex-pg2-v15@217.71.138.1's password:
+eltex-pg2-v15_part1.log                                           100% 8192    60.7KB/s   00:00
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ scp -P 44556 eltex-pg2-v15@217.71.138.1:~/eltex-pg2-v15_part3_get20M.log ./module1_p1/task2
+eltex-pg2-v15@217.71.138.1's password:
+eltex-pg2-v15_part3_get20M.log                                    100% 1194     9.4KB/s   00:00
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ scp -P 44556 eltex-pg2-v15@217.71.138.1:~/eltex-pg2-v15_part3.log ./module1_p1/task3
+eltex-pg2-v15@217.71.138.1's password:
+eltex-pg2-v15_part3.log                                           100% 4008    38.3KB/s   00:00
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git add .
+warning: in the working copy of 'module1_p1/task2/eltex-pg2-v15_part3_get20M.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'module1_p1/task3/eltex-pg2-v15_part3.log', LF will be replaced by CRLF the next time Git touches it
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   module1_p1/task1/eltex-pg2-v15_part1.log
+        new file:   module1_p1/task2/eltex-pg2-v15_part3_get20M.log
+        new file:   module1_p1/task3/eltex-pg2-v15_part3.log
+
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git commit -m "случайные логи с сервера"
+[main 551f59f] случайные логи с сервера
+ 3 files changed, 90 insertions(+)
+ create mode 100644 module1_p1/task1/eltex-pg2-v15_part1.log
+ create mode 100644 module1_p1/task2/eltex-pg2-v15_part3_get20M.log
+ create mode 100644 module1_p1/task3/eltex-pg2-v15_part3.log
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 32 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 3.15 KiB | 1.05 MiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/sashasiv/eltex_m1_p2_r3.git
+   b58e958..551f59f  main -> main
+
+sashasiv@MyComputer MINGW64 ~/git/eltex_m1_p2_r3_clone (main)
+$ cd ~/eltex_m1_p2_r3
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ echo "Это не основной репрозиторий позже будет удален" >> README.md
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git commit -m "обновил README"
+[main b3f4c57] обновил README
+ 1 file changed, 1 insertion(+)
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 32 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 382 bytes | 382.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/sashasiv/eltex_m1_p2_r3.git
+   551f59f..b3f4c57  main -> main
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ cd ~/git/eltex_m1_p2_r3_clone
+
+sashasiv@MyComputer MINGW64 ~/git/eltex_m1_p2_r3_clone (main)
+$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 362 bytes | 40.00 KiB/s, done.
+From https://github.com/sashasiv/eltex_m1_p2_r3
+   551f59f..b3f4c57  main       -> origin/main
+
+sashasiv@MyComputer MINGW64 ~/git/eltex_m1_p2_r3_clone (main)
+$ git log origin/main
+commit b3f4c5755cd834dc84b55192e2022d7233d6f600 (origin/main, origin/HEAD)
+Author: sashasiv <sashasiv@mail.ru>
+Date:   Sun Oct 18 18:16:59 2026 +0700
+
+    обновил README
+
+commit 551f59f9ba4145a83cb85023640a6d3e76c89813 (HEAD -> main)
+Author: sashasiv <sashasiv@mail.ru>
+Date:   Sun Oct 18 18:05:53 2026 +0700
+
+    случайные логи с сервера
+
+commit b58e958c5aeee1bed1f7cd663ceb7bce3ffa7d5f
+Author: sashasiv <sashasiv@mail.ru>
+Date:   Sun Oct 18 15:26:06 2026 +0700
+
+    first commit
+
+sashasiv@MyComputer MINGW64 ~/git/eltex_m1_p2_r3_clone (main)
+$ git diff main origin/main
+diff --git a/README.md b/README.md
+index 2cb4828..949d6f2 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,2 @@
+ # Практика по git
++Это не основной репрозиторий позже будет удален
+
+sashasiv@MyComputer MINGW64 ~/git/eltex_m1_p2_r3_clone (main)
+$ git pull
+Updating 551f59f..b3f4c57
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+sashasiv@MyComputer MINGW64 ~/git/eltex_m1_p2_r3_clone (main)
+$ cd ~/eltex_m1_p2_r3
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ mkdir -p m1p2/t1 m1p2/t2 m1p3/t3
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ cp^C
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ cp "/c/Users/sashasiv/Desktop/1 модуль 2 практика/practice2_eltex-pg2-v15_part1.log" ./m1p2/t1
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ mkdir -p m1p2/t3
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ cp "/c/Users/sashasiv/Desktop/1 модуль 2 практика/practice2_eltex-pg2-v15_part2.log" ./m1p2/t2
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ cp "/c/Users/sashasiv/Desktop/1 модуль 2 практика/practice2_eltex-pg2-v15_part3.log" ./m1p2/t3
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ rm -r m1p3
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git add .
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   m1p2/t1/practice2_eltex-pg2-v15_part1.log
+        new file:   m1p2/t2/practice2_eltex-pg2-v15_part2.log
+        new file:   m1p2/t3/practice2_eltex-pg2-v15_part3.log
+
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git commit -m "дополнительные логи !ЭТОТ репрезеторий тестовый полные логи отчетов не здесь"
+bash: !ЭТОТ: event not found
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git commit -m "дополнительные логи ЭТОТ репрезеторий тестовый полные логи отчетов не здесь"
+[main 218fa4c] дополнительные логи ЭТОТ репрезеторий тестовый полные логи отчетов не здесь
+ 3 files changed, 1078 insertions(+)
+ create mode 100644 m1p2/t1/practice2_eltex-pg2-v15_part1.log
+ create mode 100644 m1p2/t2/practice2_eltex-pg2-v15_part2.log
+ create mode 100644 m1p2/t3/practice2_eltex-pg2-v15_part3.log
+
+sashasiv@MyComputer MINGW64 ~/eltex_m1_p2_r3 (main)
+$ git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 32 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 13.51 KiB | 2.70 MiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/sashasiv/eltex_m1_p2_r3.git
+   b3f4c57..218fa4c  main -> main
