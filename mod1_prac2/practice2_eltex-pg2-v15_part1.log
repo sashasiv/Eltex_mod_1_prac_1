@@ -1,0 +1,850 @@
+eltex-pg2-v15@eltex-2026-autumn:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/eltex-pg2-v15/.ssh/id_rsa): 
+/home/eltex-pg2-v15/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/eltex-pg2-v15/.ssh/id_rsa
+Your public key has been saved in /home/eltex-pg2-v15/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:0A3usjif23Oo8zeu5vjM73XGYJ163CVOMvKf/PAFwcM eltex-pg2-v15@eltex-2026-autumn
+The key's randomart image is:
++---[RSA 3072]----+
+|        .        |
+|       o o   o   |
+|      . o .   E  |
+|       o     . + |
+|      . S . = * .|
+|     . o   + X +.|
+|    o .  .  + O o|
+|     o.*+ +. * +.|
+|      *OOO+.  +.o|
++----[SHA256]-----+
+
+eltex-pg2-v15@eltex-2026-autumn:~$ ssh-copy-id root@172.16.9.215
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/eltex-pg2-v15/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@172.16.9.215's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'root@172.16.9.215'"
+and check to make sure that only the key(s) you wanted were added.
+
+eltex-pg2-v15@eltex-2026-autumn:~$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCoWSnZEROwECvps5gliBgrb95g/bi5QFtXmnzk5Jyluej5ajeIzl36z9Vcx167X448h/8fTAVBBFmV4E0rqsw/bspsvIx9Dn6zV2BlinVLJZ2nWHEe2pF8ibwXnN3Ud45pDZkK0VAiRdrJU/EUzqQsz41kp1S2sBuUKxIyJ/A5olQTwYrl+fHD/z20tWmlD9R+13DWXBx4bksyFqlZ4cMGZ4DTwz2Uyb9/pXG3Wpch7qnyAXR/jAiDKk7Sh3WR+cWmMqL7L9ZTbEQqzuF2fhvxwuOaXXzmveSZ0Gfh0151sNsSqL+leYmLiW1KPeMTW6+z/noimBfa6qPO0iIJhsPbwPzpb459iIBn4qchX//htvpTdVhrUPyj62G/HRIfL9eKpy5dOzfhO4TXI5LX6+lJmhvzXoN2g2nRz53n5gEwWeSP+vra1S/G5VdTuCMRjgsEzcC8Tz/dn/VCjAqPhqsnWsDDJeoYK2IDvGlBBJ1B2GmMfBoHeNktSD1hYaKLQJ8= eltex-pg2-v15@eltex-2026-autumn
+
+eltex-pg2-v15@eltex-2026-autumn:~$ ls -l ~/.ssh/id_rsa.pub
+-rw-r--r-- 1 eltex-pg2-v15 eltex-pg2-v15 585 Oct 15 16:44 /home/eltex-pg2-v15/.ssh/id_rsa.pub
+
+eltex-pg2-v15@eltex-2026-autumn:~$ ssh root@172.16.9.215
+
+======Переход на 2 сервер========================================================================================
+
+root@eltex-practice2-pg2-v15:~# cat ~/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcEW5e+BkELnpBvbJ6NccSLM8cLh/WhJqKX/xYtB8AlhwKi2sW1hSbxcm8dE8QWEahXnMuvFflsJekubYyLvuFSltCaCSdtSU6R1wEMmFyk9NW2hxy1d6nQB9KrzYYQDEo83l3vHuNZq7U0n6PQTlHGvjJEz+RAv0no5nCcNEZbpenhnrs1qrPjg+sU7Qm8UvPjQzdWniocwux/K35tXGCrGN9kGgDd1EN9H2SNbxDrrUytaiYHEWDvroSfQE1vnaPy/+Bv0q3IQhKYvSocXwJZ9y+JG3jQZG7MVKvCYv7PyZgsncDUkizX2QkXTag10RTiNGYVtIdzI2eWhkViQAQmnghOXJ+y7ugCx6HlgwFomMlxpBtWFA316njpmYN/pQVaGlhL0w75cksg6ZX5Uq4Jyy1uYf+w9Yc9EAPjyxgWP2ayR3pDyqgXUrKsKh/dkz6jzvv4duHI1ONpH/vIQMQJ8Ttm2px7gqxW/Ly6WJgiJCb5JzO3kcybnjOOg81qMs= eltex-pg2-v15@eltex-2026-autumn
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCoWSnZEROwECvps5gliBgrb95g/bi5QFtXmnzk5Jyluej5ajeIzl36z9Vcx167X448h/8fTAVBBFmV4E0rqsw/bspsvIx9Dn6zV2BlinVLJZ2nWHEe2pF8ibwXnN3Ud45pDZkK0VAiRdrJU/EUzqQsz41kp1S2sBuUKxIyJ/A5olQTwYrl+fHD/z20tWmlD9R+13DWXBx4bksyFqlZ4cMGZ4DTwz2Uyb9/pXG3Wpch7qnyAXR/jAiDKk7Sh3WR+cWmMqL7L9ZTbEQqzuF2fhvxwuOaXXzmveSZ0Gfh0151sNsSqL+leYmLiW1KPeMTW6+z/noimBfa6qPO0iIJhsPbwPzpb459iIBn4qchX//htvpTdVhrUPyj62G/HRIfL9eKpy5dOzfhO4TXI5LX6+lJmhvzXoN2g2nRz53n5gEwWeSP+vra1S/G5VdTuCMRjgsEzcC8Tz/dn/VCjAqPhqsnWsDDJeoYK2IDvGlBBJ1B2GmMfBoHeNktSD1hYaKLQJ8= eltex-pg2-v15@eltex-2026-autumn
+
+root@eltex-practice2-pg2-v15:~# ls -l ~/.ssh/authorized_keys
+-rw------- 1 root root 1170 Oct 15 09:45 /root/.ssh/authorized_keys
+
+root@eltex-practice2-pg2-v15:~# ls -ld ~/.ssh
+drwx------ 2 root root 4096 Mar 12  2025 /root/.ssh
+
+root@eltex-practice2-pg2-v15:~# useradd -m -s /bin/bash user1
+
+root@eltex-practice2-pg2-v15:~# passwd user1
+New password: 
+Retype new password: 
+passwd: password updated successfully
+
+root@eltex-practice2-pg2-v15:~# adduser user2
+info: Adding user `user2' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user2' (1002) ...
+info: Adding new user `user2' (1002) with group `user2 (1002)' ...
+info: Creating home directory `/home/user2' ...
+info: Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for user2
+Enter the new value, or press ENTER for the default
+        Full Name []: 
+        Room Number []: 
+        Work Phone []: 
+        Home Phone []: 
+        Other []: 
+Is the information correct? [Y/n] y
+info: Adding new user `user2' to supplemental / extra groups `users' ...
+info: Adding user `user2' to group `users' ...
+
+root@eltex-practice2-pg2-v15:~# adduser user3
+info: Adding user `user3' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user3' (1003) ...
+info: Adding new user `user3' (1003) with group `user3 (1003)' ...
+info: Creating home directory `/home/user3' ...
+info: Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for user3
+Enter the new value, or press ENTER for the default
+        Full Name []: 
+        Room Number []: 
+        Work Phone []: 
+        Home Phone []: 
+        Other []: 
+Is the information correct? [Y/n] y
+info: Adding new user `user3' to supplemental / extra groups `users' ...
+info: Adding user `user3' to group `users' ...
+
+root@eltex-practice2-pg2-v15:~# usermod -s /usr/sbin/nologin user3
+
+root@eltex-practice2-pg2-v15:~# su user3
+This account is currently not available.
+
+root@eltex-practice2-pg2-v15:~# su -s /bin/bash user3
+user3@eltex-practice2-pg2-v15:/root$ 
+
+user3@eltex-practice2-pg2-v15:/root$ logout
+bash: logout: not login shell: use `exit'
+
+user3@eltex-practice2-pg2-v15:/root$ exit
+exit
+root@eltex-practice2-pg2-v15:~# 
+
+root@eltex-practice2-pg2-v15:~# groupadd us
+root@eltex-practice2-pg2-v15:~# usermod -aG us user1
+root@eltex-practice2-pg2-v15:~# usermod -aG us user2
+root@eltex-practice2-pg2-v15:~# usermod -aG us user3
+
+root@eltex-practice2-pg2-v15:~# groups user1
+user1 : user1 us
+
+root@eltex-practice2-pg2-v15:~# groups user2
+user2 : user2 users us
+
+root@eltex-practice2-pg2-v15:~# groups user3
+user3 : user3 users us
+
+root@eltex-practice2-pg2-v15:~# mkdir -p /opt/share
+root@eltex-practice2-pg2-v15:~# chgrp us /opt/share
+root@eltex-practice2-pg2-v15:~# chmod u+rwx,g+rwx,g+s /opt/share 
+
+root@eltex-practice2-pg2-v15:~# ls -ld /opt/share
+drwxrwsr-x 2 root us 4096 Oct 15 10:22 /opt/share
+
+root@eltex-practice2-pg2-v15:~# su user1
+user1@eltex-practice2-pg2-v15:/root$ umask 007
+
+user1@eltex-practice2-pg2-v15:/root$ touch /opt/share/fu1
+user1@eltex-practice2-pg2-v15:/root$ exit
+exit
+root@eltex-practice2-pg2-v15:~# su user2
+user2@eltex-practice2-pg2-v15:/root$ touch /opt/share/fu2
+user2@eltex-practice2-pg2-v15:/root$ exit
+exit
+root@eltex-practice2-pg2-v15:~# su user3
+This account is currently not available.
+root@eltex-practice2-pg2-v15:~# su -s /bin/bash user3
+user3@eltex-practice2-pg2-v15:/root$ touch /opt/share/fu3
+user3@eltex-practice2-pg2-v15:/root$ exit
+exit
+
+root@eltex-practice2-pg2-v15:~# su user1
+user1@eltex-practice2-pg2-v15:/root$ rm /opt/share/fu2
+user1@eltex-practice2-pg2-v15:/root$ ls -l /opt/share
+total 0
+-rw-rw---- 1 user1 us 0 Oct 15 10:47 fu1
+-rw-rw-r-- 1 user3 us 0 Oct 15 10:49 fu3
+user1@eltex-practice2-pg2-v15:/root$ exit
+exit
+
+root@eltex-practice2-pg2-v15:~# chmod +t /opt/share
+
+root@eltex-practice2-pg2-v15:~# su user1
+user1@eltex-practice2-pg2-v15:/root$ rm /opt/share/fu3
+rm: cannot remove '/opt/share/fu3': Operation not permitted
+user1@eltex-practice2-pg2-v15:/root$ exit
+exit
+
+root@eltex-practice2-pg2-v15:~# echo "user1 ALL=(ALL) NOPASSWD: /usr/bin/dmesg" > /etc/sudoers.d/user1-dmesg
+root@eltex-practice2-pg2-v15:~# chmod 400 /etc/sudoers.d/user1-dmesg
+
+root@eltex-practice2-pg2-v15:~# echo "user1 ALL=(ALL) NOPASSWD: /usr/bin/dmesg" > /etc/sudoers.d/user1-dmesg
+root@eltex-practice2-pg2-v15:~# su user1
+user1@eltex-practice2-pg2-v15:/root$ sudo dmesg | head
+[    0.000000] Linux version 6.8.0-55-generic (buildd@lcy02-amd64-095) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:42:21 UTC 2025 (Ubuntu 6.8.0-55.57-generic 6.8.12)
+[    0.000000] Command line: BOOT_IMAGE=/vmlinuz-6.8.0-55-generic root=/dev/mapper/ubuntu--vg-ubuntu--lv ro
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai  
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+user1@eltex-practice2-pg2-v15:/root$ exit
+exit
+
+root@eltex-practice2-pg2-v15:~# cat > /usr/local/bin/dmesg_user2.sh <<'EOF'
+> #!/bin/bash
+> /usr/bin/dmesg
+> EOF
+root@eltex-practice2-pg2-v15:~# chown root:root /usr/local/bin/dmesg_user2.sh
+root@eltex-practice2-pg2-v15:~# chmod 4755 /usr/local/bin/dmesg_user2.sh
+root@eltex-practice2-pg2-v15:~# su user2
+user2@eltex-practice2-pg2-v15:/root$ /usr/local/bin/dmesg_user2.sh
+dmesg: read kernel buffer failed: Operation not permitted
+user2@eltex-practice2-pg2-v15:/root$ ls -l /usr/local/bin/
+total 4
+-rwsr-xr-x 1 root root 27 Oct 15 11:17 dmesg_user2.sh
+
+//// Судя по тому что я узнал - закономерный результат SUID на bash скриптах Linux игнорирует данный метод выдачи прав не работает
+
+user2@eltex-practice2-pg2-v15:/root$ exit
+exit
+
+root@eltex-practice2-pg2-v15:~# chage -M 10 user1
+root@eltex-practice2-pg2-v15:~# chage -M 10 user2
+root@eltex-practice2-pg2-v15:~# chage -M 10 user3
+
+root@eltex-practice2-pg2-v15:~# echo "Александр Сивальнев" > /etc/motd
+
+root@eltex-practice2-pg2-v15:~# rsync -a /etc/ /root/etc_backup/
+
+root@eltex-practice2-pg2-v15:~# tar -czf etc_backup.tar.gz etc_backup
+
+root@eltex-practice2-pg2-v15:~# tar -cjf etc_backup.tar.bz2 etc_backup
+/bin/sh: 1: bzip2: not found
+tar: etc_backup.tar.bz2: Cannot write: Broken pipe
+tar: Child returned status 127
+tar: Error is not recoverable: exiting now
+
+////bzip2 пришлось устанавливать
+
+root@eltex-practice2-pg2-v15:~# apt update 
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Hit:2 http://ru.archive.ubuntu.com/ubuntu noble InRelease                                  
+Get:3 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]                 
+Get:4 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:5 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,397 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1,144 kB]
+Get:7 http://ru.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [308 kB]
+Get:8 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]           
+Get:9 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,702 kB]    
+Get:10 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB] 
+Get:11 http://ru.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]       
+Get:12 http://ru.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5,780 B]        
+Get:13 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]        
+Get:14 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [46.3 kB]                    
+Get:15 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1,221 kB]
+Get:16 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+Fetched 6,862 kB in 1s (4,630 kB/s)                                 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+108 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+root@eltex-practice2-pg2-v15:~# apt install bzip2
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Suggested packages:
+  bzip2-doc
+The following NEW packages will be installed:
+  bzip2
+0 upgraded, 1 newly installed, 0 to remove and 108 not upgraded.
+Need to get 34.6 kB of archives.
+After this operation, 112 kB of additional disk space will be used.
+Get:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 bzip2 amd64 1.0.8-5.1ubuntu0.1 [34.6 kB]
+Fetched 34.6 kB in 0s (217 kB/s) 
+Selecting previously unselected package bzip2.
+(Reading database ... 125662 files and directories currently installed.)
+Preparing to unpack .../bzip2_1.0.8-5.1ubuntu0.1_amd64.deb ...
+Unpacking bzip2 (1.0.8-5.1ubuntu0.1) ...#####............................................................................................................] 
+Setting up bzip2 (1.0.8-5.1ubuntu0.1) ...###############################.................................................................................] 
+Processing triggers for man-db (2.12.0-4build2) ...###########################################################################...........................] 
+Scanning processes...                                                                                                                                        
+Scanning candidates...                                                                                                                                       
+Scanning linux images...                                                                                                                                     
+
+Pending kernel upgrade!
+Running kernel version:
+  6.8.0-55-generic
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 6.8.0-147-generic.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting.
+
+Restarting services...
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart getty@tty1.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+
+root@eltex-practice2-pg2-v15:~# tar -cjf etc_backup.tar.bz2 etc_backup
+
+////аналогично пришлось установить 7zip
+
+root@eltex-practice2-pg2-v15:~# 7z a -t7z etc_backup.7z etc_backup
+Command '7z' not found, but can be installed with:
+apt install 7zip        # version 23.01+dfsg-7, or
+apt install p7zip-full  # version 16.02+dfsg-8
+root@eltex-practice2-pg2-v15:~# apt install p7zip-full
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  7zip
+Suggested packages:
+  7zip-standalone 7zip-rar
+The following NEW packages will be installed:
+  7zip p7zip-full
+0 upgraded, 2 newly installed, 0 to remove and 108 not upgraded.
+Need to get 1,849 kB of archives.
+After this operation, 6,318 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ru.archive.ubuntu.com/ubuntu noble/universe amd64 7zip amd64 23.01+dfsg-11 [1,846 kB]
+Get:2 http://ru.archive.ubuntu.com/ubuntu noble/universe amd64 p7zip-full all 16.02+transitional.1 [2,500 B]
+Fetched 1,849 kB in 1s (3,432 kB/s)    
+Selecting previously unselected package 7zip.
+(Reading database ... 125689 files and directories currently installed.)
+Preparing to unpack .../7zip_23.01+dfsg-11_amd64.deb ...
+Unpacking 7zip (23.01+dfsg-11) ..........................................................................................................................] 
+Selecting previously unselected package p7zip-full.......................................................................................................] 
+Preparing to unpack .../p7zip-full_16.02+transitional.1_all.deb ...
+Unpacking p7zip-full (16.02+transitional.1) ...###############...........................................................................................] 
+Setting up 7zip (23.01+dfsg-11) ...##########################################............................................................................] 
+Setting up p7zip-full (16.02+transitional.1) ...###########################################################..............................................] 
+Processing triggers for man-db (2.12.0-4build2) ...######################################################################################................] 
+Scanning processes...                                                                                                                                        
+Scanning candidates...                                                                                                                                       
+Scanning linux images...                                                                                                                                     
+
+Pending kernel upgrade!
+Running kernel version:
+  6.8.0-55-generic
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 6.8.0-147-generic.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting.
+
+Restarting services...
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart getty@tty1.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@eltex-practice2-pg2-v15:~# 7z a -t7z etc_backup.7z etc_backup
+
+7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
+ 64-bit locale=en_US.UTF-8 Threads:2 OPEN_MAX:1024
+
+Scanning the drive:
+          
+WARNING: errno=2 : No such file or directory
+etc_backup/os-release
+
+
+WARNING: errno=2 : No such file or directory
+etc_backup/resolv.conf
+
+
+WARNING: errno=2 : No such file or directory
+etc_backup/mtab
+
+244 folders, 1459 files, 38626099 bytes (37 MiB)
+
+Creating archive: etc_backup.7z
+
+Add new data to archive: 244 folders, 1459 files, 38626099 bytes (37 MiB)
+
+                                                                                 
+Files read from disk: 1446
+Archive size: 4656746 bytes (4548 KiB)
+
+Scan WARNINGS for files and folders:
+
+etc_backup/os-release : errno=2 : No such file or directory
+etc_backup/resolv.conf : errno=2 : No such file or directory
+etc_backup/mtab : errno=2 : No such file or directory
+----------------
+Scan WARNINGS: 3
+
+root@eltex-practice2-pg2-v15:~# ls -lh etc_backup.tar.gz etc_backup.tar.bz2 etc_backup.7z
+-rw-r--r-- 1 root root 4.5M Oct 15 11:55 etc_backup.7z
+-rw-r--r-- 1 root root 526K Oct 15 11:49 etc_backup.tar.bz2
+-rw-r--r-- 1 root root 564K Oct 15 11:44 etc_backup.tar.gz
+
+root@eltex-practice2-pg2-v15:~# ls -lh etc_backup.tar.gz etc_backup.tar.bz2 etc_backup.7z
+-rw-r--r-- 1 root root 4.5M Oct 15 11:55 etc_backup.7z
+-rw-r--r-- 1 root root 526K Oct 15 11:49 etc_backup.tar.bz2
+-rw-r--r-- 1 root root 564K Oct 15 11:44 etc_backup.tar.gz
+
+////что-то явно не так попробую переархифировать 7z
+
+root@eltex-practice2-pg2-v15:~# rm -f etc_backup.7z
+root@eltex-practice2-pg2-v15:~# 7z a -t7z -mx=9 -ms=on -snl etc_backup.7z etc_backup
+
+7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
+ 64-bit locale=en_US.UTF-8 Threads:2 OPEN_MAX:1024
+
+Scanning the drive:
+241 folders, 1455 files, 2309254 bytes (2256 KiB)
+
+Creating archive: etc_backup.7z
+
+Add new data to archive: 241 folders, 1455 files, 2332188 bytes (2278 KiB)
+
+    
+Files read from disk: 1443
+Archive size: 447495 bytes (438 KiB)
+Everything is Ok
+root@eltex-practice2-pg2-v15:~# ls -lh etc_backup.tar.gz etc_backup.tar.bz2 etc_backup.7z
+-rw-r--r-- 1 root root 438K Oct 15 12:09 etc_backup.7z
+-rw-r--r-- 1 root root 526K Oct 15 11:49 etc_backup.tar.bz2
+-rw-r--r-- 1 root root 564K Oct 15 11:44 etc_backup.tar.gz
+
+////Видимо без флагов архив создается без сжатия
+
+root@eltex-practice2-pg2-v15:~# echo "Сейчас $(date)" >> /etc/motd
+root@eltex-practice2-pg2-v15:~# cat /etc/motd
+Александр Сивальнев
+Сейчас Thu Oct 15 12:16:55 PM UTC 2026
+
+root@eltex-practice2-pg2-v15:~# rsync -a /etc/ /root/etc_backup/
+root@eltex-practice2-pg2-v15:~# cd /root
+root@eltex-practice2-pg2-v15:~# tar -czf etc_backup.tar.gz etc_backup
+
+root@eltex-practice2-pg2-v15:~# mkdir -p /tmp/etc_check
+root@eltex-practice2-pg2-v15:~# tar -xjf etc_backup.tar.bz2 -C /tmp/etc_check
+root@eltex-practice2-pg2-v15:~# diff -r /root/etc_backup /tmp/etc_check/etc_backup
+diff -r /root/etc_backup/motd /tmp/etc_check/etc_backup/motd
+2d1
+< Сейчас Thu Oct 15 12:16:55 PM UTC 2026
+diff: /root/etc_backup/mtab: No such file or directory
+diff: /tmp/etc_check/etc_backup/mtab: No such file or directory
+diff: /root/etc_backup/os-release: No such file or directory
+diff: /tmp/etc_check/etc_backup/os-release: No such file or directory
+diff: /root/etc_backup/resolv.conf: No such file or directory
+diff: /tmp/etc_check/etc_backup/resolv.conf: No such file or directory
+
+root@eltex-practice2-pg2-v15:~# tar -xzf /root/etc_backup.tar.gz -C /root/etc_backup_g
+zip
+root@eltex-practice2-pg2-v15:~# 7z x /root/etc_backup.7z -o/root/etc_backup_7zip -y
+
+7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
+ 64-bit locale=en_US.UTF-8 Threads:2 OPEN_MAX:1024
+
+Scanning the drive for archives:
+1 file, 447495 bytes (438 KiB)
+
+Extracting archive: /root/etc_backup.7z
+--
+Path = /root/etc_backup.7z
+Type = 7z
+Physical Size = 447495
+Headers Size = 20577
+Method = LZMA2:3m
+Solid = +
+Blocks = 1
+
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/arptables : /usr/sbin/arptables-nft
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/arptables-restore : /usr/sbin/arptables-nft-restore
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/arptables-save : /usr/sbin/arptables-nft-save
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/awk : /usr/bin/gawk
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/awk.1.gz : /usr/share/man/man1/gawk.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/builtins.7.gz : /usr/share/man/man7/bash-builtins.7.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ebtables : /usr/sbin/ebtables-nft
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ebtables-restore : /usr/sbin/ebtables-nft-restore
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ebtables-save : /usr/sbin/ebtables-nft-save
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/editor : /bin/nano
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/editor.1.gz : /usr/share/man/man1/nano.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ex : /usr/bin/vim.basic
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ex.1.gz : /usr/share/man/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ex.da.1.gz : /usr/share/man/da/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ex.de.1.gz : /usr/share/man/de/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ex.fr.1.gz : /usr/share/man/fr/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ex.it.1.gz : /usr/share/man/it/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ex.ja.1.gz : /usr/share/man/ja/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ex.pl.1.gz : /usr/share/man/pl/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ex.ru.1.gz : /usr/share/man/ru/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ex.tr.1.gz : /usr/share/man/tr/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ftp : /usr/bin/tnftp
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ftp.1.gz : /usr/share/man/man1/tnftp.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/infobrowser : /usr/bin/info
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/infobrowser.1.gz : /usr/share/man/man1/info.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ip6tables : /usr/sbin/ip6tables-nft
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ip6tables-restore : /usr/sbin/ip6tables-nft-restore
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/ip6tables-save : /usr/sbin/ip6tables-nft-save
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/iptables : /usr/sbin/iptables-nft
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/iptables-restore : /usr/sbin/iptables-nft-restore
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/iptables-save : /usr/sbin/iptables-nft-save
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/jsondiff : /usr/bin/json-patch-jsondiff
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzcat : /usr/bin/xzcat
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzcat.1.gz : /usr/share/man/man1/xzcat.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzcmp : /usr/bin/xzcmp
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzcmp.1.gz : /usr/share/man/man1/xzcmp.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzdiff : /usr/bin/xzdiff
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzdiff.1.gz : /usr/share/man/man1/xzdiff.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzegrep : /usr/bin/xzegrep
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzegrep.1.gz : /usr/share/man/man1/xzegrep.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzfgrep : /usr/bin/xzfgrep
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzfgrep.1.gz : /usr/share/man/man1/xzfgrep.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzgrep : /usr/bin/xzgrep
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzgrep.1.gz : /usr/share/man/man1/xzgrep.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzless : /usr/bin/xzless
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzless.1.gz : /usr/share/man/man1/xzless.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzma : /usr/bin/xz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzma.1.gz : /usr/share/man/man1/xz.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzmore : /usr/bin/xzmore
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/lzmore.1.gz : /usr/share/man/man1/xzmore.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/mt : /usr/bin/mt-gnu
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/mt.1.gz : /usr/share/man/man1/mt-gnu.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/nawk : /usr/bin/gawk
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/nawk.1.gz : /usr/share/man/man1/gawk.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/nc : /bin/nc.openbsd
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/nc.1.gz : /usr/share/man/man1/nc_openbsd.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/netcat : /bin/nc.openbsd
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/netcat.1.gz : /usr/share/man/man1/nc_openbsd.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/newt-palette : /etc/newt/palette.ubuntu
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/pager : /usr/bin/less
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/pager.1.gz : /usr/share/man/man1/less.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/pico : /bin/nano
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/pico.1.gz : /usr/share/man/man1/nano.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/pinentry : /usr/bin/pinentry-curses
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/pinentry.1.gz : /usr/share/man/man1/pinentry-curses.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/pybabel : /usr/bin/pybabel-python3
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/rmt : /usr/sbin/rmt-tar
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/rmt.8.gz : /usr/share/man/man8/rmt-tar.8.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/rview : /usr/bin/vim.basic
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/rvim : /usr/bin/vim.basic
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/sar : /usr/bin/sar.sysstat
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/sar.1.gz : /usr/share/man/man1/sar.sysstat.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/telnet : /usr/bin/inetutils-telnet
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/telnet.1.gz : /usr/share/man/man1/inetutils-telnet.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/text.plymouth : /usr/share/plymouth/themes/ubuntu-text/ubuntu-text.plymouth
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/unlzma : /usr/bin/unxz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/unlzma.1.gz : /usr/share/man/man1/unxz.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vi : /usr/bin/vim.basic
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vi.1.gz : /usr/share/man/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vi.da.1.gz : /usr/share/man/da/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vi.de.1.gz : /usr/share/man/de/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vi.fr.1.gz : /usr/share/man/fr/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vi.it.1.gz : /usr/share/man/it/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vi.ja.1.gz : /usr/share/man/ja/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vi.pl.1.gz : /usr/share/man/pl/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vi.ru.1.gz : /usr/share/man/ru/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vi.tr.1.gz : /usr/share/man/tr/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/view : /usr/bin/vim.basic
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/view.1.gz : /usr/share/man/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/view.da.1.gz : /usr/share/man/da/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/view.de.1.gz : /usr/share/man/de/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/view.fr.1.gz : /usr/share/man/fr/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/view.it.1.gz : /usr/share/man/it/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/view.ja.1.gz : /usr/share/man/ja/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/view.pl.1.gz : /usr/share/man/pl/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/view.ru.1.gz : /usr/share/man/ru/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/view.tr.1.gz : /usr/share/man/tr/man1/vim.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vim : /usr/bin/vim.basic
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vimdiff : /usr/bin/vim.basic
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/vtrgb : /etc/console-setup/vtrgb
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/which : /usr/bin/which.debianutils
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/which.1.gz : /usr/share/man/man1/which.debianutils.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/which.de1.gz : /usr/share/man/de/man1/which.debianutils.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/which.es1.gz : /usr/share/man/es/man1/which.debianutils.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/which.fr1.gz : /usr/share/man/fr/man1/which.debianutils.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/which.it1.gz : /usr/share/man/it/man1/which.debianutils.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/which.ja1.gz : /usr/share/man/ja/man1/which.debianutils.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/which.pl1.gz : /usr/share/man/pl/man1/which.debianutils.1.gz
+ERROR: Dangerous link path was ignored : etc_backup/alternatives/which.sl1.gz : /usr/share/man/sl/man1/which.debianutils.1.gz
+ERROR: Dangerous symbolic link path was ignored : etc_backup/default/locale : ../locale.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/10-hinting-slight.conf : /usr/share/fontconfig/conf.avail/10-hinting-slight.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/10-scale-bitmap-fonts.conf : /usr/share/fontconfig/conf.avail/10-scale-bitmap-fonts.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/10-sub-pixel-rgb.conf : /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/10-yes-antialias.conf : /usr/share/fontconfig/conf.avail/10-yes-antialias.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/11-lcdfilter-default.conf : /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/20-unhint-small-vera.conf : /usr/share/fontconfig/conf.avail/20-unhint-small-vera.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/30-metric-aliases.conf : /usr/share/fontconfig/conf.avail/30-metric-aliases.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/40-nonlatin.conf : /usr/share/fontconfig/conf.avail/40-nonlatin.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/45-generic.conf : /usr/share/fontconfig/conf.avail/45-generic.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/45-latin.conf : /usr/share/fontconfig/conf.avail/45-latin.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/48-spacing.conf : /usr/share/fontconfig/conf.avail/48-spacing.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/49-sansserif.conf : /usr/share/fontconfig/conf.avail/49-sansserif.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/50-user.conf : /usr/share/fontconfig/conf.avail/50-user.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/51-local.conf : /usr/share/fontconfig/conf.avail/51-local.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/60-generic.conf : /usr/share/fontconfig/conf.avail/60-generic.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/60-latin.conf : /usr/share/fontconfig/conf.avail/60-latin.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/65-fonts-persian.conf : /usr/share/fontconfig/conf.avail/65-fonts-persian.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/65-nonlatin.conf : /usr/share/fontconfig/conf.avail/65-nonlatin.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/69-unifont.conf : /usr/share/fontconfig/conf.avail/69-unifont.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/70-no-bitmaps-except-emoji.conf : /usr/share/fontconfig/conf.avail/70-no-bitmaps-except-emoji.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/80-delicious.conf : /usr/share/fontconfig/conf.avail/80-delicious.conf
+ERROR: Dangerous link path was ignored : etc_backup/fonts/conf.d/90-synthetic.conf : /usr/share/fontconfig/conf.avail/90-synthetic.conf
+ERROR: Dangerous link path was ignored : etc_backup/kernel/postinst.d/update-notifier : /usr/share/update-notifier/notify-reboot-required
+ERROR: Dangerous link path was ignored : etc_backup/localtime : /usr/share/zoneinfo/Etc/UTC
+ERROR: Dangerous symbolic link path was ignored : etc_backup/modules-load.d/modules.conf : ../modules
+ERROR: Dangerous link path was ignored : etc_backup/newt/palette : /etc/alternatives/newt-palette
+ERROR: Dangerous link path was ignored : etc_backup/rmt : /usr/sbin/rmt
+ERROR: Dangerous link path was ignored : etc_backup/sgml/catalog : /var/lib/sgml-base/supercatalog
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/ACCVRAIZ1.pem : /usr/share/ca-certificates/mozilla/ACCVRAIZ1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/AC_RAIZ_FNMT-RCM.pem : /usr/share/ca-certificates/mozilla/AC_RAIZ_FNMT-RCM.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.pem : /usr/share/ca-certificates/mozilla/AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/ANF_Secure_Server_Root_CA.pem : /usr/share/ca-certificates/mozilla/ANF_Secure_Server_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Actalis_Authentication_Root_CA.pem : /usr/share/ca-certificates/mozilla/Actalis_Authentication_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Amazon_Root_CA_1.pem : /usr/share/ca-certificates/mozilla/Amazon_Root_CA_1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Amazon_Root_CA_2.pem : /usr/share/ca-certificates/mozilla/Amazon_Root_CA_2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Amazon_Root_CA_3.pem : /usr/share/ca-certificates/mozilla/Amazon_Root_CA_3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Amazon_Root_CA_4.pem : /usr/share/ca-certificates/mozilla/Amazon_Root_CA_4.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Atos_TrustedRoot_2011.pem : /usr/share/ca-certificates/mozilla/Atos_TrustedRoot_2011.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Atos_TrustedRoot_Root_CA_ECC_TLS_2021.pem : /usr/share/ca-certificates/mozilla/Atos_TrustedRoot_Root_CA_ECC_TLS_2021.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Atos_TrustedRoot_Root_CA_RSA_TLS_2021.pem : /usr/share/ca-certificates/mozilla/Atos_TrustedRoot_Root_CA_RSA_TLS_2021.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem : /usr/share/ca-certificates/mozilla/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/BJCA_Global_Root_CA1.pem : /usr/share/ca-certificates/mozilla/BJCA_Global_Root_CA1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/BJCA_Global_Root_CA2.pem : /usr/share/ca-certificates/mozilla/BJCA_Global_Root_CA2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Buypass_Class_2_Root_CA.pem : /usr/share/ca-certificates/mozilla/Buypass_Class_2_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Buypass_Class_3_Root_CA.pem : /usr/share/ca-certificates/mozilla/Buypass_Class_3_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/CA_Disig_Root_R2.pem : /usr/share/ca-certificates/mozilla/CA_Disig_Root_R2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/CFCA_EV_ROOT.pem : /usr/share/ca-certificates/mozilla/CFCA_EV_ROOT.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/COMODO_ECC_Certification_Authority.pem : /usr/share/ca-certificates/mozilla/COMODO_ECC_Certification_Authority.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/COMODO_RSA_Certification_Authority.pem : /usr/share/ca-certificates/mozilla/COMODO_RSA_Certification_Authority.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Certainly_Root_E1.pem : /usr/share/ca-certificates/mozilla/Certainly_Root_E1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Certainly_Root_R1.pem : /usr/share/ca-certificates/mozilla/Certainly_Root_R1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Certigna_Root_CA.pem : /usr/share/ca-certificates/mozilla/Certigna_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Certum_EC-384_CA.pem : /usr/share/ca-certificates/mozilla/Certum_EC-384_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Certum_Trusted_Network_CA.pem : /usr/share/ca-certificates/mozilla/Certum_Trusted_Network_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Certum_Trusted_Network_CA_2.pem : /usr/share/ca-certificates/mozilla/Certum_Trusted_Network_CA_2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Certum_Trusted_Root_CA.pem : /usr/share/ca-certificates/mozilla/Certum_Trusted_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/D-TRUST_BR_Root_CA_1_2020.pem : /usr/share/ca-certificates/mozilla/D-TRUST_BR_Root_CA_1_2020.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/D-TRUST_BR_Root_CA_2_2023.pem : /usr/share/ca-certificates/mozilla/D-TRUST_BR_Root_CA_2_2023.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/D-TRUST_EV_Root_CA_1_2020.pem : /usr/share/ca-certificates/mozilla/D-TRUST_EV_Root_CA_1_2020.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/D-TRUST_EV_Root_CA_2_2023.pem : /usr/share/ca-certificates/mozilla/D-TRUST_EV_Root_CA_2_2023.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/D-TRUST_Root_Class_3_CA_2_2009.pem : /usr/share/ca-certificates/mozilla/D-TRUST_Root_Class_3_CA_2_2009.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/D-TRUST_Root_Class_3_CA_2_EV_2009.pem : /usr/share/ca-certificates/mozilla/D-TRUST_Root_Class_3_CA_2_EV_2009.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/DigiCert_Assured_ID_Root_G2.pem : /usr/share/ca-certificates/mozilla/DigiCert_Assured_ID_Root_G2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/DigiCert_Assured_ID_Root_G3.pem : /usr/share/ca-certificates/mozilla/DigiCert_Assured_ID_Root_G3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/DigiCert_Global_Root_G2.pem : /usr/share/ca-certificates/mozilla/DigiCert_Global_Root_G2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/DigiCert_Global_Root_G3.pem : /usr/share/ca-certificates/mozilla/DigiCert_Global_Root_G3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/DigiCert_TLS_ECC_P384_Root_G5.pem : /usr/share/ca-certificates/mozilla/DigiCert_TLS_ECC_P384_Root_G5.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/DigiCert_TLS_RSA4096_Root_G5.pem : /usr/share/ca-certificates/mozilla/DigiCert_TLS_RSA4096_Root_G5.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/DigiCert_Trusted_Root_G4.pem : /usr/share/ca-certificates/mozilla/DigiCert_Trusted_Root_G4.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Entrust_Root_Certification_Authority.pem : /usr/share/ca-certificates/mozilla/Entrust_Root_Certification_Authority.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/GDCA_TrustAUTH_R5_ROOT.pem : /usr/share/ca-certificates/mozilla/GDCA_TrustAUTH_R5_ROOT.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/GTS_Root_R1.pem : /usr/share/ca-certificates/mozilla/GTS_Root_R1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/GTS_Root_R3.pem : /usr/share/ca-certificates/mozilla/GTS_Root_R3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/GTS_Root_R4.pem : /usr/share/ca-certificates/mozilla/GTS_Root_R4.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/GlobalSign_ECC_Root_CA_-_R4.pem : /usr/share/ca-certificates/mozilla/GlobalSign_ECC_Root_CA_-_R4.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/GlobalSign_ECC_Root_CA_-_R5.pem : /usr/share/ca-certificates/mozilla/GlobalSign_ECC_Root_CA_-_R5.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/GlobalSign_Root_CA_-_R3.pem : /usr/share/ca-certificates/mozilla/GlobalSign_Root_CA_-_R3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/GlobalSign_Root_CA_-_R6.pem : /usr/share/ca-certificates/mozilla/GlobalSign_Root_CA_-_R6.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/GlobalSign_Root_E46.pem : /usr/share/ca-certificates/mozilla/GlobalSign_Root_E46.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/GlobalSign_Root_R46.pem : /usr/share/ca-certificates/mozilla/GlobalSign_Root_R46.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Go_Daddy_Root_Certificate_Authority_-_G2.pem : /usr/share/ca-certificates/mozilla/Go_Daddy_Root_Certificate_Authority_-_G2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/HARICA_TLS_ECC_Root_CA_2021.pem : /usr/share/ca-certificates/mozilla/HARICA_TLS_ECC_Root_CA_2021.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/HARICA_TLS_RSA_Root_CA_2021.pem : /usr/share/ca-certificates/mozilla/HARICA_TLS_RSA_Root_CA_2021.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem : /usr/share/ca-certificates/mozilla/Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem : /usr/share/ca-certificates/mozilla/Hellenic_Academic_and_Research_Institutions_RootCA_2015.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/HiPKI_Root_CA_-_G1.pem : /usr/share/ca-certificates/mozilla/HiPKI_Root_CA_-_G1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Hongkong_Post_Root_CA_3.pem : /usr/share/ca-certificates/mozilla/Hongkong_Post_Root_CA_3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/ISRG_Root_X1.pem : /usr/share/ca-certificates/mozilla/ISRG_Root_X1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/ISRG_Root_X2.pem : /usr/share/ca-certificates/mozilla/ISRG_Root_X2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/IdenTrust_Commercial_Root_CA_1.pem : /usr/share/ca-certificates/mozilla/IdenTrust_Commercial_Root_CA_1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/IdenTrust_Public_Sector_Root_CA_1.pem : /usr/share/ca-certificates/mozilla/IdenTrust_Public_Sector_Root_CA_1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Izenpe.com.pem : /usr/share/ca-certificates/mozilla/Izenpe.com.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Microsec_e-Szigno_Root_CA_2009.pem : /usr/share/ca-certificates/mozilla/Microsec_e-Szigno_Root_CA_2009.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Microsoft_ECC_Root_Certificate_Authority_2017.pem : /usr/share/ca-certificates/mozilla/Microsoft_ECC_Root_Certificate_Authority_2017.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Microsoft_RSA_Root_Certificate_Authority_2017.pem : /usr/share/ca-certificates/mozilla/Microsoft_RSA_Root_Certificate_Authority_2017.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/NAVER_Global_Root_Certification_Authority.pem : /usr/share/ca-certificates/mozilla/NAVER_Global_Root_Certification_Authority.crt                                                                ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem : /usr/share/ca-certificates/mozilla/NetLock_Arany_=Class_Gold=_Főtanúsítvány.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/OISTE_Server_Root_ECC_G1.pem : /usr/share/ca-certificates/mozilla/OISTE_Server_Root_ECC_G1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/OISTE_Server_Root_RSA_G1.pem : /usr/share/ca-certificates/mozilla/OISTE_Server_Root_RSA_G1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/OISTE_WISeKey_Global_Root_GB_CA.pem : /usr/share/ca-certificates/mozilla/OISTE_WISeKey_Global_Root_GB_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/OISTE_WISeKey_Global_Root_GC_CA.pem : /usr/share/ca-certificates/mozilla/OISTE_WISeKey_Global_Root_GC_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/QuoVadis_Root_CA_1_G3.pem : /usr/share/ca-certificates/mozilla/QuoVadis_Root_CA_1_G3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/QuoVadis_Root_CA_2_G3.pem : /usr/share/ca-certificates/mozilla/QuoVadis_Root_CA_2_G3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/QuoVadis_Root_CA_3_G3.pem : /usr/share/ca-certificates/mozilla/QuoVadis_Root_CA_3_G3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/SSL.com_EV_Root_Certification_Authority_ECC.pem : /usr/share/ca-certificates/mozilla/SSL.com_EV_Root_Certification_Authority_ECC.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/SSL.com_EV_Root_Certification_Authority_RSA_R2.pem : /usr/share/ca-certificates/mozilla/SSL.com_EV_Root_Certification_Authority_RSA_R2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/SSL.com_Root_Certification_Authority_ECC.pem : /usr/share/ca-certificates/mozilla/SSL.com_Root_Certification_Authority_ECC.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/SSL.com_Root_Certification_Authority_RSA.pem : /usr/share/ca-certificates/mozilla/SSL.com_Root_Certification_Authority_RSA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/SSL.com_TLS_ECC_Root_CA_2022.pem : /usr/share/ca-certificates/mozilla/SSL.com_TLS_ECC_Root_CA_2022.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/SSL.com_TLS_RSA_Root_CA_2022.pem : /usr/share/ca-certificates/mozilla/SSL.com_TLS_RSA_Root_CA_2022.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/SZAFIR_ROOT_CA2.pem : /usr/share/ca-certificates/mozilla/SZAFIR_ROOT_CA2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Sectigo_Public_Server_Authentication_Root_E46.pem : /usr/share/ca-certificates/mozilla/Sectigo_Public_Server_Authentication_Root_E46.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Sectigo_Public_Server_Authentication_Root_R46.pem : /usr/share/ca-certificates/mozilla/Sectigo_Public_Server_Authentication_Root_R46.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/SecureSign_Root_CA12.pem : /usr/share/ca-certificates/mozilla/SecureSign_Root_CA12.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/SecureSign_Root_CA14.pem : /usr/share/ca-certificates/mozilla/SecureSign_Root_CA14.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/SecureSign_Root_CA15.pem : /usr/share/ca-certificates/mozilla/SecureSign_Root_CA15.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Security_Communication_ECC_RootCA1.pem : /usr/share/ca-certificates/mozilla/Security_Communication_ECC_RootCA1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Security_Communication_RootCA2.pem : /usr/share/ca-certificates/mozilla/Security_Communication_RootCA2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Starfield_Root_Certificate_Authority_-_G2.pem : /usr/share/ca-certificates/mozilla/Starfield_Root_Certificate_Authority_-_G2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Starfield_Services_Root_Certificate_Authority_-_G2.pem : /usr/share/ca-certificates/mozilla/Starfield_Services_Root_Certificate_Authority_-_G2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/SwissSign_RSA_TLS_Root_CA_2022_-_1.pem : /usr/share/ca-certificates/mozilla/SwissSign_RSA_TLS_Root_CA_2022_-_1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/T-TeleSec_GlobalRoot_Class_2.pem : /usr/share/ca-certificates/mozilla/T-TeleSec_GlobalRoot_Class_2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/T-TeleSec_GlobalRoot_Class_3.pem : /usr/share/ca-certificates/mozilla/T-TeleSec_GlobalRoot_Class_3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem : /usr/share/ca-certificates/mozilla/TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/TWCA_CYBER_Root_CA.pem : /usr/share/ca-certificates/mozilla/TWCA_CYBER_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/TWCA_Global_Root_CA.pem : /usr/share/ca-certificates/mozilla/TWCA_Global_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/TWCA_Root_Certification_Authority.pem : /usr/share/ca-certificates/mozilla/TWCA_Root_Certification_Authority.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Telekom_Security_TLS_ECC_Root_2020.pem : /usr/share/ca-certificates/mozilla/Telekom_Security_TLS_ECC_Root_2020.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Telekom_Security_TLS_RSA_Root_2023.pem : /usr/share/ca-certificates/mozilla/Telekom_Security_TLS_RSA_Root_2023.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/Telia_Root_CA_v2.pem : /usr/share/ca-certificates/mozilla/Telia_Root_CA_v2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/TrustAsia_Global_Root_CA_G3.pem : /usr/share/ca-certificates/mozilla/TrustAsia_Global_Root_CA_G3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/TrustAsia_Global_Root_CA_G4.pem : /usr/share/ca-certificates/mozilla/TrustAsia_Global_Root_CA_G4.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/TrustAsia_TLS_ECC_Root_CA.pem : /usr/share/ca-certificates/mozilla/TrustAsia_TLS_ECC_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/TrustAsia_TLS_RSA_Root_CA.pem : /usr/share/ca-certificates/mozilla/TrustAsia_TLS_RSA_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/TunTrust_Root_CA.pem : /usr/share/ca-certificates/mozilla/TunTrust_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/UCA_Extended_Validation_Root.pem : /usr/share/ca-certificates/mozilla/UCA_Extended_Validation_Root.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/UCA_Global_G2_Root.pem : /usr/share/ca-certificates/mozilla/UCA_Global_G2_Root.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/USERTrust_ECC_Certification_Authority.pem : /usr/share/ca-certificates/mozilla/USERTrust_ECC_Certification_Authority.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/USERTrust_RSA_Certification_Authority.pem : /usr/share/ca-certificates/mozilla/USERTrust_RSA_Certification_Authority.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/certSIGN_Root_CA_G2.pem : /usr/share/ca-certificates/mozilla/certSIGN_Root_CA_G2.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/e-Szigno_Root_CA_2017.pem : /usr/share/ca-certificates/mozilla/e-Szigno_Root_CA_2017.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/e-Szigno_TLS_Root_CA_2023.pem : /usr/share/ca-certificates/mozilla/e-Szigno_TLS_Root_CA_2023.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/ePKI_Root_Certification_Authority.pem : /usr/share/ca-certificates/mozilla/ePKI_Root_Certification_Authority.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/emSign_ECC_Root_CA_-_C3.pem : /usr/share/ca-certificates/mozilla/emSign_ECC_Root_CA_-_C3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/emSign_ECC_Root_CA_-_G3.pem : /usr/share/ca-certificates/mozilla/emSign_ECC_Root_CA_-_G3.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/emSign_Root_CA_-_C1.pem : /usr/share/ca-certificates/mozilla/emSign_Root_CA_-_C1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/emSign_Root_CA_-_G1.pem : /usr/share/ca-certificates/mozilla/emSign_Root_CA_-_G1.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/vTrus_ECC_Root_CA.pem : /usr/share/ca-certificates/mozilla/vTrus_ECC_Root_CA.crt
+ERROR: Dangerous link path was ignored : etc_backup/ssl/certs/vTrus_Root_CA.pem : /usr/share/ca-certificates/mozilla/vTrus_Root_CA.crt
+ERROR: Dangerous symbolic link path was ignored : etc_backup/sysctl.d/99-sysctl.conf : ../sysctl.conf
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/cloud-config.target.wants/cloud-init-hotplugd.socket : /usr/lib/systemd/system/cloud-init-hotplugd.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/cloud-final.service.wants/snapd.seeded.service : /usr/lib/systemd/system/snapd.seeded.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/cloud-init.target.wants/cloud-config.service : /usr/lib/systemd/system/cloud-config.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/cloud-init.target.wants/cloud-final.service : /usr/lib/systemd/system/cloud-final.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/cloud-init.target.wants/cloud-init-local.service : /usr/lib/systemd/system/cloud-init-local.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/cloud-init.target.wants/cloud-init.service : /usr/lib/systemd/system/cloud-init.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/dbus-org.freedesktop.ModemManager1.service : /usr/lib/systemd/system/ModemManager.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/dbus-org.freedesktop.resolve1.service : /usr/lib/systemd/system/systemd-resolved.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/dbus-org.freedesktop.thermald.service : /usr/lib/systemd/system/thermald.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/dbus-org.freedesktop.timesync1.service : /usr/lib/systemd/system/systemd-timesyncd.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/display-manager.service.wants/gpu-manager.service : /usr/lib/systemd/system/gpu-manager.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/emergency.target.wants/grub-initrd-fallback.service : /usr/lib/systemd/system/grub-initrd-fallback.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/final.target.wants/snapd.system-shutdown.service : /usr/lib/systemd/system/snapd.system-shutdown.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/getty.target.wants/getty@tty1.service : /usr/lib/systemd/system/getty@.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/graphical.target.wants/udisks2.service : /usr/lib/systemd/system/udisks2.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/hibernate.target.wants/grub-common.service : /usr/lib/systemd/system/grub-common.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/hybrid-sleep.target.wants/grub-common.service : /usr/lib/systemd/system/grub-common.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/iscsi.service : /usr/lib/systemd/system/open-iscsi.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/mdmonitor.service.wants/mdcheck_continue.timer : /usr/lib/systemd/system/mdcheck_continue.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/mdmonitor.service.wants/mdcheck_start.timer : /usr/lib/systemd/system/mdcheck_start.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/mdmonitor.service.wants/mdmonitor-oneshot.timer : /usr/lib/systemd/system/mdmonitor-oneshot.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/ModemManager.service : /usr/lib/systemd/system/ModemManager.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/apport.service : /usr/lib/systemd/system/apport.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/console-setup.service : /usr/lib/systemd/system/console-setup.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/cron.service : /usr/lib/systemd/system/cron.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/dmesg.service : /usr/lib/systemd/system/dmesg.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/e2scrub_reap.service : /lib/systemd/system/e2scrub_reap.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/grub-common.service : /usr/lib/systemd/system/grub-common.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/grub-initrd-fallback.service : /usr/lib/systemd/system/grub-initrd-fallback.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/lxd-installer.socket : /usr/lib/systemd/system/lxd-installer.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/networkd-dispatcher.service : /usr/lib/systemd/system/networkd-dispatcher.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/open-vm-tools.service : /usr/lib/systemd/system/open-vm-tools.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/pollinate.service : /usr/lib/systemd/system/pollinate.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/remote-fs.target : /usr/lib/systemd/system/remote-fs.target
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/rsyslog.service : /usr/lib/systemd/system/rsyslog.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/secureboot-db.service : /usr/lib/systemd/system/secureboot-db.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/snapd.apparmor.service : /usr/lib/systemd/system/snapd.apparmor.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/snapd.autoimport.service : /usr/lib/systemd/system/snapd.autoimport.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/snapd.core-fixup.service : /usr/lib/systemd/system/snapd.core-fixup.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/snapd.recovery-chooser-trigger.service : /usr/lib/systemd/system/snapd.recovery-chooser-trigger.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/snapd.seeded.service : /usr/lib/systemd/system/snapd.seeded.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/snapd.service : /usr/lib/systemd/system/snapd.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/sysstat.service : /usr/lib/systemd/system/sysstat.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/systemd-networkd.service : /lib/systemd/system/systemd-networkd.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/thermald.service : /usr/lib/systemd/system/thermald.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/ua-reboot-cmds.service : /usr/lib/systemd/system/ua-reboot-cmds.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/ubuntu-advantage.service : /usr/lib/systemd/system/ubuntu-advantage.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/ufw.service : /usr/lib/systemd/system/ufw.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/multi-user.target.wants/unattended-upgrades.service : /usr/lib/systemd/system/unattended-upgrades.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service : /lib/systemd/system/systemd-networkd-wait-online.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/oem-config.service.wants/gpu-manager.service : /usr/lib/systemd/system/gpu-manager.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/open-vm-tools.service.requires/vgauth.service : /usr/lib/systemd/system/vgauth.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/paths.target.wants/apport-autoreport.path : /usr/lib/systemd/system/apport-autoreport.path
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/paths.target.wants/tpm-udev.path : /usr/lib/systemd/system/tpm-udev.path
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/rescue.target.wants/grub-initrd-fallback.service : /usr/lib/systemd/system/grub-initrd-fallback.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sleep.target.wants/grub-initrd-fallback.service : /usr/lib/systemd/system/grub-initrd-fallback.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sockets.target.wants/apport-forward.socket : /usr/lib/systemd/system/apport-forward.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sockets.target.wants/dm-event.socket : /usr/lib/systemd/system/dm-event.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sockets.target.wants/iscsid.socket : /usr/lib/systemd/system/iscsid.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sockets.target.wants/multipathd.socket : /usr/lib/systemd/system/multipathd.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sockets.target.wants/snapd.socket : /usr/lib/systemd/system/snapd.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sockets.target.wants/ssh.socket : /usr/lib/systemd/system/ssh.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sockets.target.wants/systemd-networkd.socket : /lib/systemd/system/systemd-networkd.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sockets.target.wants/uuidd.socket : /usr/lib/systemd/system/uuidd.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/ssh.service.requires/ssh.socket : /usr/lib/systemd/system/ssh.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/suspend-then-hibernate.target.wants/grub-common.service : /usr/lib/systemd/system/grub-common.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/suspend.target.wants/grub-common.service : /usr/lib/systemd/system/grub-common.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/apparmor.service : /usr/lib/systemd/system/apparmor.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/blk-availability.service : /usr/lib/systemd/system/blk-availability.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/finalrd.service : /usr/lib/systemd/system/finalrd.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/keyboard-setup.service : /usr/lib/systemd/system/keyboard-setup.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket : /usr/lib/systemd/system/lvm2-lvmpolld.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/lvm2-monitor.service : /usr/lib/systemd/system/lvm2-monitor.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/multipathd.service : /usr/lib/systemd/system/multipathd.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/open-iscsi.service : /usr/lib/systemd/system/open-iscsi.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/setvtrgb.service : /usr/lib/systemd/system/setvtrgb.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/systemd-pstore.service : /usr/lib/systemd/system/systemd-pstore.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/systemd-resolved.service : /usr/lib/systemd/system/systemd-resolved.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysinit.target.wants/systemd-timesyncd.service : /usr/lib/systemd/system/systemd-timesyncd.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/syslog.service : /usr/lib/systemd/system/rsyslog.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysstat.service.wants/sysstat-collect.timer : /usr/lib/systemd/system/sysstat-collect.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/sysstat.service.wants/sysstat-summary.timer : /usr/lib/systemd/system/sysstat-summary.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/apport-autoreport.timer : /usr/lib/systemd/system/apport-autoreport.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/apt-daily-upgrade.timer : /lib/systemd/system/apt-daily-upgrade.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/apt-daily.timer : /lib/systemd/system/apt-daily.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/dpkg-db-backup.timer : /lib/systemd/system/dpkg-db-backup.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/e2scrub_all.timer : /lib/systemd/system/e2scrub_all.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/fstrim.timer : /lib/systemd/system/fstrim.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/fwupd-refresh.timer : /usr/lib/systemd/system/fwupd-refresh.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/logrotate.timer : /usr/lib/systemd/system/logrotate.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/man-db.timer : /usr/lib/systemd/system/man-db.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/motd-news.timer : /lib/systemd/system/motd-news.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/snapd.snap-repair.timer : /usr/lib/systemd/system/snapd.snap-repair.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/ua-timer.timer : /usr/lib/systemd/system/ua-timer.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/update-notifier-download.timer : /usr/lib/systemd/system/update-notifier-download.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/timers.target.wants/update-notifier-motd.timer : /usr/lib/systemd/system/update-notifier-motd.timer
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system/vmtoolsd.service : /usr/lib/systemd/system/open-vm-tools.service
+ERROR: Dangerous link path was ignored : etc_backup/systemd/system-generators/systemd-gpt-auto-generator : /dev/null
+ERROR: Dangerous link path was ignored : etc_backup/systemd/user/sockets.target.wants/dirmngr.socket : /usr/lib/systemd/user/dirmngr.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/user/sockets.target.wants/gpg-agent-browser.socket : /usr/lib/systemd/user/gpg-agent-browser.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/user/sockets.target.wants/gpg-agent-extra.socket : /usr/lib/systemd/user/gpg-agent-extra.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/user/sockets.target.wants/gpg-agent-ssh.socket : /usr/lib/systemd/user/gpg-agent-ssh.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/user/sockets.target.wants/gpg-agent.socket : /usr/lib/systemd/user/gpg-agent.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/user/sockets.target.wants/keyboxd.socket : /usr/lib/systemd/user/keyboxd.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/user/sockets.target.wants/pk-debconf-helper.socket : /usr/lib/systemd/user/pk-debconf-helper.socket
+ERROR: Dangerous link path was ignored : etc_backup/systemd/user/timers.target.wants/launchpadlib-cache-clean.timer : /usr/lib/systemd/user/launchpadlib-cache-clean.timer
+ERROR: Dangerous link path was ignored : etc_backup/update-motd.d/50-landscape-sysinfo : /usr/share/landscape/landscape-sysinfo.wrapper
+ERROR: Dangerous link path was ignored : etc_backup/vtrgb : /etc/alternatives/vtrgb
+ERROR: Dangerous symbolic link path was ignored : etc_backup/xdg/systemd/user : ../../systemd/user
+                                         
+Sub items Errors: 369
+
+Archives with Errors: 1
+
+Sub items Errors: 369
+
+root@eltex-practice2-pg2-v15:~# diff /root/etc_backup_gzip/etc_backup/motd /root/etc_backup_7zip/etc_backup/motd
+2d1
+< Сейчас Thu Oct 15 12:16:55 PM UTC 2026
+root@eltex-practice2-pg2-v15:~# 
